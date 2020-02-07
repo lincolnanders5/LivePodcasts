@@ -1,6 +1,6 @@
 # Live Podcasts
 A project to host a podcast feed where each "episode" is the stream for another podcast.
-The purpose of this is to allow the streaming of podcasts you care about (by forking and editing [podcast-feed.json]) from your favorite podcast app.
+The purpose of this is to allow the streaming of podcasts you care about (by forking and editing [podcast-feed.json]()) from your favorite podcast app.
 A project spawned from [RSS-Create](https://github.com/lincolnanders5/RSS-Create.git), my project to create and host temporary podcast feeds from local folders of audio.
 
 ## Installation
