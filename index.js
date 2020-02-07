@@ -15,7 +15,7 @@ var item_template = ({ title = "", description = "", homeLink = "", streamLink =
 			    <link>${homeLink}</link>
 				<itunes:episodeType>full</itunes:episodeType>
 			    <enclosure url="${streamLink}" type="audio/mpeg" length="1"></enclosure>
-			    <pubDate>${new Date().toDateString()}</pubDate>
+			    <pubDate>${(new Date(new Date() - 24*60*60*1000)).toDateString()}</pubDate>
 			    <itunes:author>${names}</itunes:author>
 			    <itunes:duration>00:01</itunes:duration>
 			    <itunes:explicit>no</itunes:explicit>
@@ -39,6 +39,7 @@ var rss_template = ({ title = "", subtitle = "", content_text = "" }) => `<?xml 
 		</itunes:owner>
 		<itunes:explicit>no</itunes:explicit>
 		<itunes:image href="" />
+		<itunes:category>Developers</itunes:category>
 		${content_text}
 	</channel>
 </rss>`;
@@ -70,3 +71,5 @@ app.listen(PORT, async () => {
 	const apiUrl = ngrok.getUrl();
 	console.log(`ngrok interface avaliable at ${ngrok.getUrl()}`);
 });
+
+module.exports = exports = app;
