@@ -8,6 +8,13 @@
 			"names" : "Marco Arment, Casey Liss, & John Siracusa.",
 			"homeLink" : "http://atp.fm",
 			"streamLink" : "http://marco.org:8001/listen"
-		}
+		},
+	    {
+		"title" : "Relay.fm",
+		"description" : "Live streams for all live-streamed Relay.fm shows",
+		"names" : "Relay.fm",
+		"homeLink" : "http://www.relay.fm",
+		"streamLink" : "http://stream.relay.fm:8000/stream"
+	    }
 	]
 }
