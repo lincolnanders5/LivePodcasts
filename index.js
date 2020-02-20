@@ -26,8 +26,8 @@ var rss_template = ({ title = "", subtitle = "", content_text = "" }) => `<?xml 
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:admin="http://webns.net/mvcb/" xmlns:atom="http://www.w3.org/2005/Atom/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 	<channel>
 		<title>${title}</title>
-		<link>lincolnanders.com</link>
-		<language>en-us</language>
+		<link>https://lincolnanders.com</link>
+		<language>en-US</language>
 		<copyright>Copyright &#xA9; Lincoln Anders</copyright>
 		<itunes:subtitle>${subtitle}</itunes:subtitle>
 		<itunes:author>Lincoln Anders</itunes:author>
@@ -39,7 +39,7 @@ var rss_template = ({ title = "", subtitle = "", content_text = "" }) => `<?xml 
 		</itunes:owner>
 		<itunes:explicit>no</itunes:explicit>
 		<itunes:image href="" />
-		<itunes:category>Developers</itunes:category>
+		<itunes:category text="Technology"></itunes:category>
 		${content_text}
 	</channel>
 </rss>`;
@@ -50,8 +50,8 @@ var rss_template = ({ title = "", subtitle = "", content_text = "" }) => `<?xml 
 */
 const render_feed = (json_fileName) => new Promise((resolve, reject) => {
 	var e = { feedTitle, feedSubtitle, feeds } = JSON.parse(fs.readFileSync(json_fileName));
-	var feed_items = feeds.map(item_template);
-	var feed_text = rss_template({ title : feedTitle, subtitle : feedSubtitle, content_text : feed_items });
+	var feed_items = feeds.map(item_template).join("\n\t\t\t");
+    var feed_text = rss_template({ title : feedTitle, subtitle : feedSubtitle, content_text : feed_items });
 	resolve(feed_text);
 });
 
